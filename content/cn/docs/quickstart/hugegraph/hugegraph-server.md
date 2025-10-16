@@ -44,7 +44,7 @@ Core 模块是 Tinkerpop 接口的实现，Backend 模块用于管理数据存�
 可选项：
 
 1. 可以使用 `docker exec -it server bash` 进入容器完成一些操作
-2. 可以使用 `docker run -itd --name=server -p 8080:8080 -e PRELOAD="true" hugegraph/hugegraph:1.5.0` 在启动的时候预加载一个**内置的**样例图。可以通过 `RESTful API` 进行验证。具体步骤可以参考 [5.1.1](/cn/docs/quickstart/hugegraph-server/#511-%E5%90%AF%E5%8A%A8-server-%E7%9A%84%E6%97%B6%E5%80%99%E5%88%9B%E5%BB%BA%E7%A4%BA%E4%BE%8B%E5%9B%BE) 
+2. 可以使用 `docker run -itd --name=server -p 8080:8080 -e PRELOAD="true" hugegraph/hugegraph:1.5.0` 在启动的时候预加载一个**内置的**样例图。可以通过 `RESTful API` 进行验证。具体步骤可以参考 [5.1.9](#519-%E5%90%AF%E5%8A%A8-server-%E7%9A%84%E6%97%B6%E5%80%99%E5%88%9B%E5%BB%BA%E7%A4%BA%E4%BE%8B%E5%9B%BE)
 3. 可以使用 `-e PASSWORD=xxx` 设置是否开启鉴权模式以及 admin 的密码，具体步骤可以参考 [Config Authentication](/cn/docs/config/config-authentication#使用-docker-时开启鉴权模式) 
 
 如果使用 docker desktop，则可以按照如下的方式设置可选项：
@@ -310,7 +310,15 @@ Connecting to HugeGraphServer (http://127.0.0.1:8080/graphs)....OK
 
 </details>
 
-##### 5.1.3 HBase
+##### 5.1.3 ToplingDB (Beta) 
+
+<details>
+<summary>点击展开/折叠 ToplingDB 配置及启动方法</summary>
+
+参考: [ToplingDB Quick Start]({{< ref path="/blog/hugegraph/toplingdb/toplingdb-quick-start.md" lang="cn">}})
+</details>
+
+##### 5.1.4 HBase
 
 <details>
 <summary>点击展开/折叠 HBase 配置及启动方法</summary>
@@ -352,7 +360,7 @@ Connecting to HugeGraphServer (http://127.0.0.1:8080/graphs)....OK
 
 </details>
 
-##### 5.1.4 MySQL
+##### 5.1.5 MySQL
 
 <details>
 <summary>点击展开/折叠 MySQL 配置及启动方法</summary>
@@ -396,7 +404,7 @@ Connecting to HugeGraphServer (http://127.0.0.1:8080/graphs)....OK
 
 </details>
 
-##### 5.1.5 Cassandra
+##### 5.1.6 Cassandra
 
 <details>
 <summary>点击展开/折叠 Cassandra 配置及启动方法</summary>
@@ -455,7 +463,7 @@ Connecting to HugeGraphServer (http://127.0.0.1:8080/graphs)....OK
 
 </details>
 
-##### 5.1.6 Memory
+##### 5.1.7 Memory
 
 <details>
 <summary>点击展开/折叠 Memory 配置及启动方法</summary>
@@ -481,7 +489,7 @@ Connecting to HugeGraphServer (http://127.0.0.1:8080/graphs)....OK
 
 </details>
 
-##### 5.1.7 ScyllaDB
+##### 5.1.8 ScyllaDB
 
 <details>
 <summary>点击展开/折叠 ScyllaDB 配置及启动方法</summary>
@@ -525,7 +533,7 @@ Connecting to HugeGraphServer (http://127.0.0.1:8080/graphs)....OK
 
 </details>
 
-##### 5.1.8 启动 server 的时候创建示例图
+##### 5.1.9 启动 server 的时候创建示例图
 
 在脚本启动时候携带 `-p true`参数，表示 preload, 即创建示例图图
 
@@ -547,7 +555,7 @@ Connecting to HugeGraphServer (http://127.0.0.1:8080/graphs)......OK
 
 #### 5.2 使用 Docker
 
-在 [3.3 使用 Docker 容器](#33-使用-docker-容器)中，我们已经介绍了如何使用 `docker` 部署 `hugegraph-server`, 我们还可以使用其他的后端存储或者设置参数在 sever 启动的时候加载样例图
+在 [3.1 使用 Docker 容器](#31-使用-docker-容器-便于测试)中，我们已经介绍了如何使用 `docker` 部署 `hugegraph-server`, 我们还可以使用其他的后端存储或者设置参数在 sever 启动的时候加载样例图
 
 ##### 5.2.1 使用 Cassandra 作为后端
 
